@@ -7,20 +7,28 @@
     <script src="vue.js"></script>
 </head>
 <body>
-    <!-- div[id="app"]>input[type='text']+p{{{title}}}-->
     <div id='app'>
         <input type="text" v-on:input="changeTitle">
+        <a v-bind:href="link">google</a>
         <p>{{title}}</p>
+        <div v-on:mousemove="updateCoordinates">Coordinates: X: {{x}} / Y:{{y}}</div>
     </div>
     <script>
         new Vue({
             el: '#app',
             data: {
-            title: 'Hello World'
+                title: 'Hello World',
+                link: 'http://google.com',
+                x: 0,
+                y: 0
             },
             methods: {
                 changeTitle: function (event) {
                     this.title = event.target.value;
+                },
+                updateCoordinates: function(event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
                 }
             }
         })
