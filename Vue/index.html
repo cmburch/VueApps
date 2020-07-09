@@ -17,6 +17,10 @@
         <ul>
             <li v-for="ingredient in ingredients">{{ingredient}}</li>
         </ul>
+
+        <ul>
+            <li v-for="(ingredient,index) in ingredients">{{ingredient}}-index:({{index}})</li>
+        </ul>
     </div>
     <script>
         new Vue({
