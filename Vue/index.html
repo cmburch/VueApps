@@ -12,11 +12,17 @@
         <a v-bind:href="link">google</a>
         <p>{{title}}</p>
         <div v-on:mousemove="updateCoordinates">Coordinates: X: {{x}} / Y:{{y}}</div>
+
+        <!-- ul>li[v-for="ingredient in ingredients"]{{{ingredient}}} -->
+        <ul>
+            <li v-for="ingredient in ingredients">{{ingredient}}</li>
+        </ul>
     </div>
     <script>
         new Vue({
             el: '#app',
             data: {
+                ingredients: ["apple","grape","lemon"],
                 title: 'Hello World',
                 link: 'http://google.com',
                 x: 0,
