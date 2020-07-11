@@ -1,17 +1,11 @@
 <template>
   <div>
-      <p> Server Status: {{ status }}</p>
+    <app-server-status></app-server-status>
   </div>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      status: 'Status Check Good'
-    }
-  }
-}
+
 </script>
 
 <style lang="scss">
