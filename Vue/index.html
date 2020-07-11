@@ -26,8 +26,19 @@
             <p>{{ ingredient }}</p>
             <p>{{ index}}</p>
        </template >
+       <my-app></my-app>
+
     </div>
     <script>
+        Vue.component('my-app',{
+            data : function(){
+                return {
+                    status:'Critical'
+                }
+            },
+            template:`<h1>My component {{ status }}</h1>`
+        })
+
         new Vue({
             el: '#app',
             data: {
