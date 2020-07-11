@@ -1,25 +1,14 @@
 <template>
   <div>
-   <p>Server Status: {{ status }} </p>
-    <br>
-    <button @click="changeStatus">changeStatus</button>
+    <app-server-status v-for='server in 5' :key='server'></app-server-status>
   </div>
 </template>
 
 <script>
+  import ServerStatus from './ServerStatus.vue';
   export default {
-    data() {
-      return {
-        statusCheck: true,
-        status: 'status check is good'
-      }
-    },
-    methods: {
-       changeStatus() {
-         this.statusCheck = !this.statusCheck;
-         console.log(this.statusCheck);
-         this.status = this.statusCheck ? "status check is good" : "status is bad"
-       }
+    components: {
+      'app-server-status': ServerStatus
     }
   }
 </script>
