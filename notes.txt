@@ -2,9 +2,43 @@ Additional Notes
 
 Vue Notes
 
+###############################################################
+Computed / Watchers / V.S Regular Methods
+https://vuejs.org/v2/guide/computed.html
 
+#Basic Example
 
+<div id="example">
+  <p>Original message: "{{ message }}"</p>
+  <p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+var vm = new Vue({
+  el: '#example',
+  data: {
+    message: 'Hello'
+  },
+  computed: {
+    // a computed getter
+    reversedMessage: function () {
+      // `this` points to the vm instance
+      return this.message.split('').reverse().join('')
+    }
+  }
+})
 
+-- Computed Properties
+  Vue reads your function that are inside of the computed property and looks for dependencies(i.e properties in data object).
+  if a data dependency is updated the computed property will call the method(s) that has a dependency to the data. Also, the 
+  computed properties are Cache in memory.Computed property will immediately return the previously computed result without
+  having to run the function again.
+    --from docs
+    Why do we need caching? Imagine we have an expensive computed property A, which requires looping through a huge Array and doing
+    a lot of computations. Then we may have other computed properties that in turn depend on A. Without caching, we would be executing 
+    A’s getter many more times than necessary! In cases where you do not want caching, use a method instead.
+
+-- Watchers
+
+###############################################################
 
 Webpack Notes
 https://webpack.js.org/concepts/#entry
