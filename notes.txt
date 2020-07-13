@@ -1,1 +1,21 @@
 Additional Notes
+
+Vue Notes
+
+
+
+
+
+Webpack Notes
+https://webpack.js.org/concepts/#entry
+https://dev.to/pixelgoo/how-to-configure-webpack-from-scratch-for-a-basic-website-46a5
+
+--Entry 
+An entry point indicates which module webpack should use to begin building out its internal dependency graph. 
+webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+By default its value is ./src/index.js, 
+//webpack.config.js
+
+module.exports = {
+  entry: './path/to/my/entry/file.js'
+};
